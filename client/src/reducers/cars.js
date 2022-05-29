@@ -18,12 +18,11 @@ export default (state = [], action) => {
         case FETCH_CARS_BY_ID:
             return {
                 ...state,
-                items: [...state.items, {
-                    
+                currentItem: {
                     id: action.payload.data.id,
                     ...action.payload.data.attributes,
                     medias: action.payload.data.attributes.medias.data
-                }]
+                }
             }
         default:
             return state;
