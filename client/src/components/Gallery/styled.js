@@ -11,6 +11,21 @@ export const ImageContainer = styled('div')({
         bottom: 0,
         objectFit: "cover",
         width: "100%",
-        height: "100%"
+        height: "100%",
+        cursor: "pointer"
+    },
+})
+
+export const SliderNavigation = styled('div')({
+    '& .slick-slider':{
+        '& .slick-track':{
+            marginLeft: "-0.25rem",
+            marginRight: "-0.25rem",
+            display: "flex",
+            '& .slick-slide':{
+                padding: "0 0.25rem",
+                cursor: "pointer",
+            }
+        }
     }
 })
