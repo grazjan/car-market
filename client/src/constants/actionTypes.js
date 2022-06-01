@@ -1,5 +1,5 @@
 //Action types
 
 //Cars 
-export const FETCH_CARS = "FETCH_CARS";
-export const FETCH_CARS_BY_ID = "FETCH_CARS_BY_ID";
+export const FETCH_VEHICLES = "FETCH_VEHICLES";
+export const FETCH_VEHICLE_BY_ID = "FETCH_VEHICLE_BY_ID";

@@ -1,21 +1,21 @@
-import { FETCH_CARS, FETCH_CARS_BY_ID } from '../constants/actionTypes';
+import { FETCH_VEHICLES, FETCH_VEHICLE_BY_ID } from '../constants/actionTypes';
 
 export default (state = [], action) => {
     switch(action.type) {
-        case FETCH_CARS:
+        case FETCH_VEHICLES:
             return {
                 ...state,
-                items: action.payload.data.map((car) => (
+                items: action.payload.data.map((vehicle) => (
                     {
-                        id: car.id,
-                        ...car.attributes,
-                        medias: car.attributes.medias.data
+                        id: vehicle.id,
+                        ...vehicle.attributes,
+                        medias: vehicle.attributes.medias.data
                     }
                 )),
                 page: action.payload.meta.pagination.page,
                 pageCount: action.payload.meta.pagination.pageCount
             }
-        case FETCH_CARS_BY_ID:
+        case FETCH_VEHICLE_BY_ID:
             return {
                 ...state,
                 currentItem: {
