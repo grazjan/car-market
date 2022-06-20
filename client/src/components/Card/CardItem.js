@@ -16,7 +16,7 @@ const CardItem = ({ item }) => {
               {item.medias && item.medias.length ? item.medias.map((media) => (
                 <CardMedia 
                   component="img"
-                  image={"http://localhost:1337"+media.attributes.formats.medium.url}
+                  image={"http://localhost:1337" + (media.attributes.formats.medium ? media.attributes.formats.medium.url : media.attributes.url)}
                   alt="Car" 
                   key={media.id}
                   loading="lazy"
