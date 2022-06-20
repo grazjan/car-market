@@ -12,6 +12,7 @@ import SpeedIcon from '@mui/icons-material/Speed';
 import RoomIcon from '@mui/icons-material/Room';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import VehicleDataBox from '../components/VehicleDataBox/VehicleDataBox';
+import VehicleDataTable from '../components/VehicleDataTable/VehicleDataTable';
 
 
 const OfferDetail = () => {
@@ -28,7 +29,9 @@ const OfferDetail = () => {
   return (
     <Container>
       {!vehicle ? <CircularProgress/> : 
+      <>
 
+        {/* TOP SECTION */}
         <Grid container spacing={4} sx={{ marginTop: "4rem" }}>
         
             <Grid item sm={12} md={7}>
@@ -41,6 +44,22 @@ const OfferDetail = () => {
 
         </Grid>
 
+        {/* VEHICLE DATA TABLE */}
+        <Grid container sx={{ marginTop: "4rem" }}>
+          <Grid item sm={12} md={12}>
+            <VehicleDataTable vehicle={vehicle}/>
+          </Grid>
+        </Grid>
+
+        {/* VEHICLE DESCRIPTION */}
+        <Grid container sx={{ marginY: "5rem" }}>
+          <Grid item sm={12} md={12}>
+            <Typography sx={{ marginBottom: "2rem" }} variant="h4" component="h2">Description</Typography>
+            {vehicle.description}
+          </Grid>
+        </Grid>
+
+      </>
       }
     </Container>
   )
