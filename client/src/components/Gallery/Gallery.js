@@ -18,7 +18,7 @@ const Gallery = ({ medias }) => {
             <Slider ref={slider => setNav1(slider)} asNavFor={nav2}>
                 {medias.length > 0 && medias.map((media) => (
                     <ImageContainer key={media.id}>
-                        <img src={"http://localhost:1337" + media.attributes.formats.medium.url} alt={media.attributes.alternativeText} />
+                        <img src={"http://localhost:1337" + (media.attributes.formats.medium ? media.attributes.formats.medium.url : media.attributes.url)} alt={media.attributes.alternativeText} />
                     </ImageContainer>
                 ))}
             </Slider>
