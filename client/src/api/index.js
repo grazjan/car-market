@@ -9,5 +9,13 @@ export const fetchVehicleById = (id) =>  axios.get(`${baseURL}/cars/${id}?popula
 
 
 //Auth
-export const authRegister = (user) => axios.post(`${baseURL}/api/auth/local/register`, { ...user });
+export const authRegister = (user) => axios.post(`${baseURL}/auth/local/register`, {
+    username: user.username,
+    password: user.password,
+    email: user.email
+});
+export const authLogin = (user) => axios.post(`${baseURL}/auth/local`, {
+    identifier: user.username,
+    password: user.password,
+});
  
